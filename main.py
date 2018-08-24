@@ -5,11 +5,7 @@ def main():
     graph = buildGraph()
     graph.showGraph()
 
-    graph.removeEdge("INE5402","INE5404")
-    print("")
-    graph.showGraph()
-
-    graph.removeVert("INE5408")
+    graph.removeVert("INE5404")
     print("")
     graph.showGraph()
 

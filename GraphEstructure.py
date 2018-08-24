@@ -29,13 +29,20 @@ class GraphEstructure:
     def addEdge(self, fromm, to):
         if self.existVert(fromm) and self.existVert(to) and not self.existEdge(fromm, to):
             self.vertices[fromm].addVert(to)
-           # self.vertices[to].addVert(fromm)
+           #elf.vertices[to].addVert(fromm)
         else:
             print("Aresta {}-->{} já existe!".format(fromm, to))
 
     def removeVert(self, name):
+        delList = []
         if self.existVert(name):
+            for x in self.vertices:
+                for y in self.vertices[x].subVertices:
+                    if self.vertices[x].subVertices[y].name == name:
+                        delList.append((x, y))
             del(self.vertices[name])
+            for x in delList:
+                del(self.vertices[x[0]].subVertices[x[1]])
         else:
             print("Vertice {} não existe!".format(name))
 
