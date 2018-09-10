@@ -1,111 +1,142 @@
+#OK = G.adicionaVértice(v)	        "Adiciona um novo vértice em G"
+#OK = G.removeVértice(v)	        "Remove um  vértice de G, juntamente com todas as conexões"
+#OK = G.conecta(v1,v2)	            "Conecta os vértices v1 e v2 em G"
+#OK = G.desconecta(v1,v2)	        "Desconecta os vértices v1 e v2 em G"
+#OK = G.ordem  Inteiro	            "Retorna o número de vértices de G"
+#OK = G.umVértice  Vertice	        "Retorna um vértice qualquer de G"
+#OK = G.grau(v)Inteiro	            "Retorna o número de vértices adjacentes a v em G" Ações Derivadas
+#OK = G.vértices  Conjunto	        "Retorna um conjunto contendo os vértices de G"
+#OK = G.adjacentes(v)Conjunto	    "Retorna um conjunto contendo os vértices adjacentes a v em G"
+
+
+
+#G.éRegularBoolean	            "Verifica se todos os vértices de G possuem o mesmo grau"
+#G.éCompletoBoolean	            "Verifica se cada vértice de G está conectados  a todos os outros vértices"
+#G.fechoTransitivo(v)Conjunto	"Retorna um conjunto contendo todos os vértices de G que são transitivamente alcancáveis partindo-se de v"
+#G.éConexoBoolean	            "Verifica se existe pelo menos um caminho que entre cada par de vértices de G"
+#G.éÁrvoreBoolean	            "Verifica se não há ciclos em G"
+
 from GraphEstructure import GraphEstructure
 
 def main():
 
-    graph = buildGraph()
-    graph.showGraph()
+    g = buildGraph()
+    g.showGraph()
 
-    graph.removeVert("INE5404")
+    g.removeVertice("INE5404")
     print("")
-    graph.showGraph()
+    g.showGraph()
+    print("")
+    print("")
+    print("Seu grafo tem {} vertices".format(g.ordem()))
+    print("")
+    verticeQulquer = g.umVertice().name
+    print("Um vertice qualquer --> {}".format(verticeQulquer))
+    print("Grau do vertice qualquer --> {}".format(g.grau(verticeQulquer)))
+    print("")
+    print("{}".format(g.copyVertices()))
+    print("")
+    print("{}".format(g.adjacentes(verticeQulquer)))
+
+    
 
 def buildGraph():
 
-    graph = GraphEstructure()
+    g = GraphEstructure()
     
-    graph.addVert("EEL5105") # v1
-    graph.addVert("EEL5105") # v1
+    g.adicionaVertice("EEL5105") # v1
+    g.adicionaVertice("EEL5105") # v1
 
-    graph.addVert("INE5401") # v2
-    graph.addVert("INE5402") # v3
-    graph.addVert("INE5403") # v4
-    graph.addVert("MTM3100") # v5
-    graph.addVert("MTM3101") # v6
-    graph.addVert("INE5404") # v7
-    graph.addVert("INE5405") # v8
-    graph.addVert("INE5406") # v9
-    graph.addVert("INE5407") # v10
-    graph.addVert("MTM3102") # v11
-    graph.addVert("MTM5512") # v12
-    graph.addVert("INE5408") # v13
-    graph.addVert("INE5409") # v14
-    graph.addVert("INE5410") # v15
-    graph.addVert("INE5411") # v16
-    graph.addVert("MTM5245") # v17
-    graph.addVert("INE5412") # v18
-    graph.addVert("INE5413") # v19
-    graph.addVert("INE5414") # v20
-    graph.addVert("INE5415") # v21
-    graph.addVert("INE5416") # v22
-    graph.addVert("INE5417") # v23
-    graph.addVert("INE5418") # v24
-    graph.addVert("INE5419") # v25
-    graph.addVert("INE5420") # v26
-    graph.addVert("INE5421") # v27
-    graph.addVert("INE5422") # v28
-    graph.addVert("INE5423") # v29
-    graph.addVert("INE5424") # v30
-    graph.addVert("INE5425") # v31
-    graph.addVert("INE5426") # v32
-    graph.addVert("INE5427") # v33
-    graph.addVert("INE5430") # v34
-    graph.addVert("INE5453") # v35
-    graph.addVert("INE5428") # v36
-    graph.addVert("INE5429") # v37
-    graph.addVert("INE5431") # v38
-    graph.addVert("INE5432") # v39
-    graph.addVert("INE5433") # v40
-    graph.addVert("INE5434") # v41
+    g.adicionaVertice("INE5401") # v2
+    g.adicionaVertice("INE5402") # v3
+    g.adicionaVertice("INE5403") # v4
+    g.adicionaVertice("MTM3100") # v5
+    g.adicionaVertice("MTM3101") # v6
+    g.adicionaVertice("INE5404") # v7
+    g.adicionaVertice("INE5405") # v8
+    g.adicionaVertice("INE5406") # v9
+    g.adicionaVertice("INE5407") # v10
+    g.adicionaVertice("MTM3102") # v11
+    g.adicionaVertice("MTM5512") # v12
+    g.adicionaVertice("INE5408") # v13
+    g.adicionaVertice("INE5409") # v14
+    g.adicionaVertice("INE5410") # v15
+    g.adicionaVertice("INE5411") # v16
+    g.adicionaVertice("MTM5245") # v17
+    g.adicionaVertice("INE5412") # v18
+    g.adicionaVertice("INE5413") # v19
+    g.adicionaVertice("INE5414") # v20
+    g.adicionaVertice("INE5415") # v21
+    g.adicionaVertice("INE5416") # v22
+    g.adicionaVertice("INE5417") # v23
+    g.adicionaVertice("INE5418") # v24
+    g.adicionaVertice("INE5419") # v25
+    g.adicionaVertice("INE5420") # v26
+    g.adicionaVertice("INE5421") # v27
+    g.adicionaVertice("INE5422") # v28
+    g.adicionaVertice("INE5423") # v29
+    g.adicionaVertice("INE5424") # v30
+    g.adicionaVertice("INE5425") # v31
+    g.adicionaVertice("INE5426") # v32
+    g.adicionaVertice("INE5427") # v33
+    g.adicionaVertice("INE5430") # v34
+    g.adicionaVertice("INE5453") # v35
+    g.adicionaVertice("INE5428") # v36
+    g.adicionaVertice("INE5429") # v37
+    g.adicionaVertice("INE5431") # v38
+    g.adicionaVertice("INE5432") # v39
+    g.adicionaVertice("INE5433") # v40
+    g.adicionaVertice("INE5434") # v41
 
-    graph.addEdge("MTM3100","MTM3101");
-    graph.addEdge("MTM3100","MTM3101");
+    g.conecta("MTM3100","MTM3101");
+    g.conecta("MTM3100","MTM3101");
 
-    graph.addEdge("INE5402","INE5404");
-    graph.addEdge("MTM3101","INE5405");
-    graph.addEdge("EEL5105","INE5406");
-    graph.addEdge("MTM3101","MTM3102");
-    graph.addEdge("INE5404","INE5408");
-    graph.addEdge("MTM5512","INE5409");
-    graph.addEdge("MTM3102","INE5409");
-    graph.addEdge("INE5404","INE5410");
-    graph.addEdge("INE5406","INE5411");
-    graph.addEdge("MTM5512","MTM5245");
-    graph.addEdge("INE5410","INE5412");
-    graph.addEdge("INE5411","INE5412");
-    graph.addEdge("INE5403","INE5413");
-    graph.addEdge("INE5408","INE5413");
-    graph.addEdge("INE5404","INE5414");
-    graph.addEdge("INE5403","INE5415");
-    graph.addEdge("INE5408","INE5415");
-    graph.addEdge("INE5408","INE5416");
-    graph.addEdge("INE5408","INE5417");
-    graph.addEdge("INE5412","INE5418");
-    graph.addEdge("INE5414","INE5418");
-    graph.addEdge("INE5417","INE5419");
-    graph.addEdge("MTM3102","INE5420");
-    graph.addEdge("INE5408","INE5420");
-    graph.addEdge("MTM5245","INE5420");
-    graph.addEdge("INE5415","INE5421");
-    graph.addEdge("INE5414","INE5422");
-    graph.addEdge("INE5408","INE5423");
-    graph.addEdge("INE5412","INE5424");
-    graph.addEdge("INE5405","INE5425");
-    graph.addEdge("INE5421","INE5426");
-    graph.addEdge("INE5417","INE5427");
-    graph.addEdge("INE5405","INE5430");
-    graph.addEdge("INE5413","INE5430");
-    graph.addEdge("INE5416","INE5430");
-    graph.addEdge("INE5417","INE5453");
-    graph.addEdge("INE5407","INE5428");
-    graph.addEdge("INE5403","INE5429");
-    graph.addEdge("INE5414","INE5429");
-    graph.addEdge("INE5414","INE5431");
-    graph.addEdge("INE5423","INE5432");
-    graph.addEdge("INE5453","INE5433");
-    graph.addEdge("INE5427","INE5433");
-    graph.addEdge("INE5433","INE5434");
+    g.conecta("INE5402","INE5404");
+    g.conecta("MTM3101","INE5405");
+    g.conecta("EEL5105","INE5406");
+    g.conecta("MTM3101","MTM3102");
+    g.conecta("INE5404","INE5408");
+    g.conecta("MTM5512","INE5409");
+    g.conecta("MTM3102","INE5409");
+    g.conecta("INE5404","INE5410");
+    g.conecta("INE5406","INE5411");
+    g.conecta("MTM5512","MTM5245");
+    g.conecta("INE5410","INE5412");
+    g.conecta("INE5411","INE5412");
+    g.conecta("INE5403","INE5413");
+    g.conecta("INE5408","INE5413");
+    g.conecta("INE5404","INE5414");
+    g.conecta("INE5403","INE5415");
+    g.conecta("INE5408","INE5415");
+    g.conecta("INE5408","INE5416");
+    g.conecta("INE5408","INE5417");
+    g.conecta("INE5412","INE5418");
+    g.conecta("INE5414","INE5418");
+    g.conecta("INE5417","INE5419");
+    g.conecta("MTM3102","INE5420");
+    g.conecta("INE5408","INE5420");
+    g.conecta("MTM5245","INE5420");
+    g.conecta("INE5415","INE5421");
+    g.conecta("INE5414","INE5422");
+    g.conecta("INE5408","INE5423");
+    g.conecta("INE5412","INE5424");
+    g.conecta("INE5405","INE5425");
+    g.conecta("INE5421","INE5426");
+    g.conecta("INE5417","INE5427");
+    g.conecta("INE5405","INE5430");
+    g.conecta("INE5413","INE5430");
+    g.conecta("INE5416","INE5430");
+    g.conecta("INE5417","INE5453");
+    g.conecta("INE5407","INE5428");
+    g.conecta("INE5403","INE5429");
+    g.conecta("INE5414","INE5429");
+    g.conecta("INE5414","INE5431");
+    g.conecta("INE5423","INE5432");
+    g.conecta("INE5453","INE5433");
+    g.conecta("INE5427","INE5433");
+    g.conecta("INE5433","INE5434");
 
-    return graph
+    return g
 
 if __name__ == '__main__':
     main()

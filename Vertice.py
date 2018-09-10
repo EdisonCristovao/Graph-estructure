@@ -6,8 +6,15 @@ class Vertice:
         self.name = ""
         self.subVertices = {}
 
-    def addVert(self, name):
+    def adicionaVertice(self, name):
         #falta verificar se o vertice existe
         v = SubVertice()
         v.name = name;
         self.subVertices[name] = v
+
+    def existVert(self, name):
+        try:
+            if self.vertices[name].name != "":
+                return True
+        except:
+            return False
