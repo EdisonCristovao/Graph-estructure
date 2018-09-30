@@ -36,7 +36,7 @@ def main():
     print("")
     print("{}".format(g.copyVertices()))
     print("")
-    print("{}".format(g.adjacentes(verticeQulquer)))
+    print("Adjacentes a {} são => {}".format(verticeQulquer, g.adjacentes(verticeQulquer)))
 
     
 
